@@ -208,19 +208,11 @@ Raw html goes here (uses liquid variabled defined above)
 
 </div>
         <div class="col-xs-12 col-lg-6">
-        <div id="timeline"></div>
-        <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
-        <script>                      
-            twttr.widgets.createTimeline(  
-                    '677152457621823488',
-                    document.getElementById('timeline'),
-                    {
-                        width: '550',
-                        height: '258',
-                        related: 'twitterdev,twitterapi'
-                    }).then(function (el) {        
-                });
-            </script>
+          <div id="timeline">
+            <a href="https://twitter.com/TMasterTech" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @TMasterTech</a>
+            <script>!function(d,s,id) {var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            <div id="latest-tweet"></div>
+          </div>
         </div>
     </div>
 </div>

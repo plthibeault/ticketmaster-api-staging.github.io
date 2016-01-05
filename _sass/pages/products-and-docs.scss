@@ -125,6 +125,12 @@
     }
     & .button-blue {
         margin-top: 50px;
+        @media #{$max-1200} {
+            margin-bottom: 50px;
+        }
+        @media #{$max-768} {
+            margin-bottom: 50px;
+        }
     }
 }
 

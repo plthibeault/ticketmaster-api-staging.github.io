@@ -254,3 +254,62 @@ li{
     display: none;
   }
 }
+
+.twitter-follow-button {
+  position: absolute!important;
+  top: 20px;
+  right: 20px;
+}
+
+#timeline {
+  position: relative;
+  width:553px;
+  padding:22px;
+  border:1px solid #e4e7e9;
+}
+
+#latest-tweet {
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      .user {
+        img {
+          width: 40px;
+          height: 40px;
+          float: left;
+          margin-right: 8px;
+        }
+        span {
+          display: block;
+        }
+        span:nth-child(2) > span:nth-child(1) {
+          color: #768692;
+          font-size: 16px;
+          line-height: 24px;
+          font-family: "TMSans-Bold",Helvetica,Arial,sans-serif;
+        }
+        span:nth-child(2) > span:nth-child(2) {
+          display: none;
+          float: left;
+        }
+        span:nth-child(3) {
+          color: #b7c9d3;
+          font-size: 11px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+  .tweet {
+    margin-bottom: 16px;
+  }
+  .timePosted {
+    margin: 0;
+    padding: 0;
+    color: #b7c9d3;
+    font-size: 11px;
+    line-height: 16px;
+    font-family: "TMSans-Bold",Helvetica,Arial,sans-serif;
+  }
+}
