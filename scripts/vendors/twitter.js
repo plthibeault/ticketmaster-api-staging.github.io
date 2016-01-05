@@ -171,12 +171,12 @@ var config = {
     "dateFunction": dateFormatter,
     "showImages": false,
     "showInteraction": false,
-    "showRetweet": true
+    "showRetweet": false
 };
 
 function dateFormatter(date) {
     // return date.toString();
-    return date.format("hh:MM TT - d mmm yyyy");
+    return date.format("hh:MM TT - d mmm yyyy") + ' (UTC)';
 }
 
 twitterFetcher.fetch(config);
