@@ -367,7 +367,7 @@ Returns the 20 most recent events for the authenticating user.</p>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">sort</code></td>
-      <td style="text-align: left">The search sort criteria. Values: 'name,asc', 'name,desc', 'eventDate,asc', 'eventDate,desc'.</td>
+      <td style="text-align: left">The search sort criteria. Values: 'name,asc', 'name,desc', 'date,asc', 'date,desc'.</td>
       <td style="text-align: left">string</td>
       <td style="text-align: left"> </td>
       <td style="text-align: left">No</td>
