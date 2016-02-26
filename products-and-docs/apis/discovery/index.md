@@ -290,7 +290,7 @@ Returns the 20 most recent events for the authenticating user.</p>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">unit</code></td>
-      <td style="text-align: left">The radius distance unit. Possible values: 'miles', 'km'</td>
+      <td style="text-align: left">The radius distance unit. Possible values: miles, km</td>
       <td style="text-align: left">string</td>
       <td style="text-align: left">“miles”</td>
       <td style="text-align: left">No</td>
@@ -300,6 +300,55 @@ Returns the 20 most recent events for the authenticating user.</p>
       <td style="text-align: left">Source of the event. Possible values are '', 'ticketmaster', 'ticketweb', 'universe'.</td>
       <td style="text-align: left">string</td>
       <td style="text-align: left">“ticketmaster”</td>
+      <td style="text-align: left">No</td>
+    </tr>    
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">locale</code></td>
+      <td style="text-align: left">The event locale, including country and localization. Values: “”, “en-us”, “en-gb”, “en-ca”, “es-us”, “en-mx”, “es-mx”, “en-au”, “en-nz”, “fr-fr”, “fr-ca”.</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">marketId</code></td>
+      <td style="text-align: left">The city/area in which this event takes place.</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">“27”</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">startDateTime</code></td>
+      <td style="text-align: left">Include events happening after this date.</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">“2017-01-01T00:00:00Z”</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">endDateTime</code></td>
+      <td style="text-align: left">Include events happening before this date.</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">“2017-01-01T00:00:00Z”</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">includeTBA</code></td>
+      <td style="text-align: left">Whether or not to return events with dates to be announced (TBA). Default is 'no', TBA events are not returned.</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">“yes|no|only”</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">includeTBD</code></td>
+      <td style="text-align: left">Whether or not to return events with dates to be determined (TBD). Default is 'no', TBD events are not returned.</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">“yes|no|only”</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">includeTest</code></td>
+      <td style="text-align: left">Whether or not to return test events. Default is 'no', test events are not returned.</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">“yes|no|only”</td>
       <td style="text-align: left">No</td>
     </tr>    
     <tr>
@@ -318,25 +367,11 @@ Returns the 20 most recent events for the authenticating user.</p>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">sort</code></td>
-      <td style="text-align: left">The search sort criteria. Values: 'name,asc', 'name,desc'.</td>
+      <td style="text-align: left">The search sort criteria. Values: 'name,asc', 'name,desc', 'eventDate,asc', 'eventDate,desc'.</td>
       <td style="text-align: left">string</td>
       <td style="text-align: left"> </td>
       <td style="text-align: left">No</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">locale</code></td>
-      <td style="text-align: left">The event locale, including country and localization. Values: “”, “en-us”, “en-gb”, “en-ca”, “es-us”, “en-mx”, “es-mx”, “en-au”, “en-nz”, “fr-fr”, “fr-ca”.</td>
-      <td style="text-align: left">string</td>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left">No</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">marketId</code></td>
-      <td style="text-align: left">The city/area in which this event takes place.</td>
-      <td style="text-align: left">string</td>
-      <td style="text-align: left">“27”</td>
-      <td style="text-align: left">No</td>
-    </tr>
+    </tr>        
   </tbody>
 </table>
 
@@ -1213,7 +1248,7 @@ Returns the event detail by event ID.</p>
 
 <p><strong>Method:</strong> GET.
 Authentication required.
-Returns all the images for an event by ID. If an event does not have an image for a supported resolution, the event’s major category image will be returned instead.</p>
+Returns all the images for an event by ID. If an event does not have an image for a supported resolution, the event’s classification image will be returned instead.</p>
 
 <p class="code red">discovery/{version}/events/{id}/images.{format}</p>
 
@@ -2096,14 +2131,7 @@ Search Classifications!</p>
   <tbody>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">keyword</code></td>
-      <td style="text-align: left">A string to search against events, attractions and venues. The keyword will be checked against titles, descriptions, names and other logical fields that describe any of these data objects.</td>
-      <td style="text-align: left">string</td>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left">No</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">locale</code></td>
-      <td style="text-align: left">The event locale, including country and localization. Values: “”, “en-us”, “en-gb”, “en-ca”, “es-us”, “en-mx”, “es-mx”, “en-au”, “en-nz”, “fr-fr”, “fr-ca”.</td>
+      <td style="text-align: left">A string to search against classifications names</td>
       <td style="text-align: left">string</td>
       <td style="text-align: left"> </td>
       <td style="text-align: left">No</td>
